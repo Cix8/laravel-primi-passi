@@ -22,8 +22,9 @@
     <main>
         <h1>Lista dati di {{ $name }} {{ $lastname }}</h1>
         <ul>
-            @foreach ($info_array as $info)
+            @foreach ($info_array as $key => $info)
                 <li>
+                    <strong>{{ ucfirst($key) }}:</strong>
                     <span>{{ $info }}</span>
                 </li>
             @endforeach
