@@ -8,10 +8,6 @@
 </head>
 <body>
     
-    <h1>Hello World!!!</h1>
-
-    <p>Ciao {{ $name }} {{ $lastname }}</p>
-
     <nav>
         <ul>
             <li>
@@ -22,6 +18,17 @@
             </li>
         </ul>
     </nav>
+
+    <main>
+        <h1>Lista dati di {{ $name }} {{ $lastname }}</h1>
+        <ul>
+            @foreach ($info_array as $info)
+                <li>
+                    <span>{{ $info }}</span>
+                </li>
+            @endforeach
+        </ul>
+    </main>
 
 </body>
 </html>

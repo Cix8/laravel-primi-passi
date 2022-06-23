@@ -13,10 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get("/", function () {
     $data_array = [
         "name" => "John",
-        "lastname" => "Smith"
+        "lastname" => "Smith",
+        "info_array" => [
+            "age" => 18,
+            "email" => "johnnysmith@smithmail.smt",
+            "address" => "Via del Campo, 12"
+        ]
     ];
-    return view('home', $data_array);
-});
+    return view("home", $data_array);
+})->name("home");
+
+Route::get("/info", function () {
+    $data_array = [
+        "name" => "John",
+        "lastname" => "Smith",
+        "info_array" => [
+            "age" => 18,
+            "email" => "johnnysmith@smithmail.smt",
+            "address" => "Via del Campo, 12"
+        ]
+    ];
+    return view("user_info", $data_array);
+})->name("user_info");
